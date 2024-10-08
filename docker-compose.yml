@@ -1,0 +1,28 @@
+version: '3.11'
+
+services:
+  backend:
+    image: receptor-task
+    build:
+      context: src
+    volumes:
+      - ./src:/opt/backend/
+      - ./poetry.lock:/opt/poetry.lock
+      - ./pyproject.toml:/opt/pyproject.toml
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo_db
+    restart: always
+    ports:
+      - "27017:27017"
+    env_file:
+      - .env
+    volumes:
+      - ./mongo_data:/var/lib/mongo/data
