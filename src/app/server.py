@@ -6,6 +6,7 @@ import uvloop
 
 from app.core.config import settings
 from app.core.db_config import mongo_db_conf
+from routes import include_routes
 
 
 def get_application():
@@ -22,6 +23,8 @@ def get_application():
         allow_methods=["*"],
         allow_headers=["*"],
     )
+    include_routes(_app)
+
     return _app
 
 
