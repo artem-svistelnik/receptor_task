@@ -1,4 +1,4 @@
-from fastapi import HTTPException, status
+from fastapi import status
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 
@@ -20,4 +20,3 @@ async def api_error_handler(request: Request, exc: ApiError):
         status_code=exc.status_code,
         content={"detail": exc.detail},
     )
-
