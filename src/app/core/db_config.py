@@ -2,7 +2,7 @@ import os
 
 
 class MongoDbConfig:
-    MONGO_URL = "mongodb: // mongo: 27017"
+    MONGO_URL = "mongodb://mongo:27017"
     DATABASE_NAME = "mongodb"
 
 
