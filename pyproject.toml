@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "receptor-task"
+version = "0.1.0"
+description = ""
+authors = ["Artem Svistelnik <artem.svistelnik@gmail.com>"]
+readme = "README.md"
+packages = [{include = "receptor_task"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.115.0"
+pydantic = "^2.9.2"
+pydantic-settings = "^2.5.2"
+uvicorn = "^0.31.0"
+pyjwt = "^2.9.0"
+uvloop = "^0.20.0"
+cryptography = "^43.0.1"
+motor = "^3.6.0"
+black = "^24.10.0"
+requests = "^2.32.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
